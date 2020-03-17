@@ -1,0 +1,100 @@
+/*
+  vue
+*/
+.fadeInDown-enter-active
+  animation fadeInDown .5s
+
+.fadeInDown-leave-active
+  animation fadeIn .3s reverse
+
+.fadeIn-enter-active
+  animation fadeIn .3s
+
+.fadeInLeft-enter-active
+  animation fadeInLeft .5s
+
+.fadeInLeft-leave-active
+  animation fadeInLeft .5s reverse
+
+.fadeInMenu-enter-active
+  opacity 0
+  animation fadeInRight .5s
+  for $i in (1..10)
+    &:nth-child({$i})
+      animation-delay (.1 * ($i - 1))s
+
+.fadeInMenu-leave-active
+  animation fadeInRight .3s reverse
+
+.fadeInArchve-enter-active
+  animation fadeIn 2s
+
+.fadeInArchve-leave-active
+  display none
+
+/*
+  keyforames
+*/
+@keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+@keyframes fadeInDown
+  0%
+    opacity 0
+    transform translate3d(0, -20%, 0)
+  100%
+    opacity 1
+    transform none
+
+@keyframes fadeInLeft
+  0%
+    opacity 0
+    transform translate3d(-100%, 0, 0)
+  100%
+    opacity 1
+    transform none
+
+@keyframes fadeInRight
+  0%
+    opacity 0
+    transform translate3d(100%, 0, 0)
+  100%
+    opacity 1
+    transform none
+
+@keyframes shake
+  0%,100%
+    transform translate3d(0,0,0)
+  20%,60%
+    transform translate3d(-10px,0,0)
+  40%,80%
+    transform translate3d(10px,0,0)
+
+@keyframes  pourItUp
+  0%
+    height 0
+  100%
+    height 100%
+
+
+@keyframes loading
+  0%,
+  100%
+    box-shadow 0em -2.6em 0em 0em #fff, 1.8em -1.8em 0 0em rgba(#fff, 0.2), 2.5em 0em 0 0em rgba(#fff, 0.2), 1.75em 1.75em 0 0em rgba(#fff, 0.2), 0em 2.5em 0 0em rgba(#fff, 0.2), -1.8em 1.8em 0 0em rgba(#fff, 0.2), -2.6em 0em 0 0em rgba(#fff, 0.5), -1.8em -1.8em 0 0em rgba(#fff, 0.7)
+  12.5%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.7), 1.8em -1.8em 0 0em #fff, 2.5em 0em 0 0em rgba(#fff, 0.2), 1.75em 1.75em 0 0em rgba(#fff, 0.2), 0em 2.5em 0 0em rgba(#fff, 0.2), -1.8em 1.8em 0 0em rgba(#fff, 0.2), -2.6em 0em 0 0em rgba(#fff, 0.2), -1.8em -1.8em 0 0em rgba(#fff, 0.5)
+  25%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.5), 1.8em -1.8em 0 0em rgba(#fff, 0.7), 2.5em 0em 0 0em #fff, 1.75em 1.75em 0 0em rgba(#fff, 0.2), 0em 2.5em 0 0em rgba(#fff, 0.2), -1.8em 1.8em 0 0em rgba(#fff, 0.2), -2.6em 0em 0 0em rgba(#fff, 0.2), -1.8em -1.8em 0 0em rgba(#fff, 0.2)
+  37.5%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.2), 1.8em -1.8em 0 0em rgba(#fff, 0.5), 2.5em 0em 0 0em rgba(#fff, 0.7), 1.75em 1.75em 0 0em #fff, 0em 2.5em 0 0em rgba(#fff, 0.2), -1.8em 1.8em 0 0em rgba(#fff, 0.2), -2.6em 0em 0 0em rgba(#fff, 0.2), -1.8em -1.8em 0 0em rgba(#fff, 0.2)
+  50%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.2), 1.8em -1.8em 0 0em rgba(#fff, 0.2), 2.5em 0em 0 0em rgba(#fff, 0.5), 1.75em 1.75em 0 0em rgba(#fff, 0.7), 0em 2.5em 0 0em #fff, -1.8em 1.8em 0 0em rgba(#fff, 0.2), -2.6em 0em 0 0em rgba(#fff, 0.2), -1.8em -1.8em 0 0em rgba(#fff, 0.2)
+  62.5%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.2), 1.8em -1.8em 0 0em rgba(#fff, 0.2), 2.5em 0em 0 0em rgba(#fff, 0.2), 1.75em 1.75em 0 0em rgba(#fff, 0.5), 0em 2.5em 0 0em rgba(#fff, 0.7), -1.8em 1.8em 0 0em #fff, -2.6em 0em 0 0em rgba(#fff, 0.2), -1.8em -1.8em 0 0em rgba(#fff, 0.2)
+  75%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.2), 1.8em -1.8em 0 0em rgba(#fff, 0.2), 2.5em 0em 0 0em rgba(#fff, 0.2), 1.75em 1.75em 0 0em rgba(#fff, 0.2), 0em 2.5em 0 0em rgba(#fff, 0.5), -1.8em 1.8em 0 0em rgba(#fff, 0.7), -2.6em 0em 0 0em #fff, -1.8em -1.8em 0 0em rgba(#fff, 0.2)
+  87.5%
+    box-shadow 0em -2.6em 0em 0em rgba(#fff, 0.2), 1.8em -1.8em 0 0em rgba(#fff, 0.2), 2.5em 0em 0 0em rgba(#fff, 0.2), 1.75em 1.75em 0 0em rgba(#fff, 0.2), 0em 2.5em 0 0em rgba(#fff, 0.2), -1.8em 1.8em 0 0em rgba(#fff, 0.5), -2.6em 0em 0 0em rgba(#fff, 0.7), -1.8em -1.8em 0 0em #fff

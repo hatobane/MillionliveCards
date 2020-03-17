@@ -1,0 +1,1035 @@
+/*
+  body
+*/
+html,
+body
+  margin 0
+  height 100%
+  padding 0
+
+body
+  background-image url($imgPath + 'bg.png')
+  background-size 50%, 50% 14px
+  color $black
+  font-family Lato, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
+  font-size 14px
+  line-height 1.7
+
+#app
+  background-image linear-gradient(135deg, lighten(rgba($blue01, .9), 10) 50%, transparent 50%), linear-gradient(lighten(rgba($blue01, .9), 15), lighten(rgba($blue01, .9), 15) 7px, lighten(rgba($blue01, .9), 5) 7px, lighten(rgba($blue01, .9), 5))
+  background-size 100%, 100% 14px
+  background-attachment fixed
+  min-height 100%
+
+h1,h2,h3,h4,h5,h6,
+ul, ol, li
+  margin 0
+  padding 0
+
+button
+  appearance none
+  background-color transparent
+  border none
+  color $black
+  cursor pointer
+  outline none
+  transition all .2s
+  padding 0
+
+a
+  border-bottom 1px solid $red
+  color darken($red, 10)
+  text-decoration none
+  transition all 0.2s ease-out
+  &:hover
+    border-color darken($red, 20)
+    color darken($red, 20)
+
+img
+  vertical-align bottom
+
+/*
+  heading
+*/
+.siteTtl,
+.pageTtl
+  @extends .m-ttl
+  position absolute
+
+.siteTtl
+  bottom 10px
+  cursor pointer
+  left 10px
+  transition background-color .3s
+  &:hover
+    background-color rgba($red, 0.8)
+
+.pageTtl
+  top 10px
+  right 10px
+  min-width 100px
+  text-align center
+
+/*
+  content
+*/
+.header,
+.footer
+  left 0
+  margin auto
+  max-width 640px
+  right 0
+  width 100%
+  z-index $indexLevel1
+
+.header
+  position relative
+  top 0
+
+.footer
+  bottom 0
+  position fixed
+
+.content
+  background-color rgba($white, 0.7)
+  box-sizing border-box
+  margin 0 auto
+  max-width 640px
+  padding 2% 1% 120px
+  &.fix
+    bottom 0
+    left 0
+    margin auto
+    max-width 640px
+    position fixed
+    right 0
+    top 0
+
+/*
+  archive
+*/
+.archive
+  margin 10px 0 50px
+
+.archive__label
+  border-bottom 1px dashed darken($blue01, 10)
+  font-size 15px
+  font-weight bold
+  letter-spacing 0.03em
+  margin-bottom 10px
+  &:before
+    @extends .m-icomoon
+    @extends .icon-snow:before
+    font-size 16px
+    margin-right 2px
+    position relative
+    top 1px
+
+.archive__status
+  margin 10px 0
+  display flex
+  flex-wrap wrap
+  li
+    background-color $white
+    border 1px solid $blue01
+    border-radius 4px
+    font-size 14px
+    margin 0 10px 10px 0
+    padding 5px 7px
+    &:before
+      @extends .m-icomoon
+      @extends .icon-price-tag:before
+      color darken($blue01, 10)
+      font-size 15px
+      margin-right 5px
+      position relative
+      top 1px
+
+.archive__cardItem
+  border 3px solid $red
+  border-radius 10px
+  box-sizing border-box
+  cursor pointer
+  margin-bottom 25px
+  position relative
+  padding 2.5% 1% 2%
+  transition border-color 0.2s
+  width 100%
+  &:hover
+    border-color darken($red, 10)
+  +sp()
+    align-items center
+    border-radius 6px
+    display flex
+    flex-wrap wrap
+    margin-bottom 15px
+    padding 1%
+
+.archive__cardItem__content
+  font-size 14px
+  line-height 1.4
+  padding-left 22.5%
+  width 76.5%
+  span
+    display inline-block
+    margin-left 4px
+  +sp()
+    padding-left 1.5%
+    width 62.5%
+
+.archive__ttl--pc
+  border-bottom 2px dashed darken($red, 5)
+  font-size 16px
+  font-weight bold
+  line-height 1
+  letter-spacing 0.02em
+  margin-bottom 2.5%
+  padding-bottom 1%
+
+.archive__ttl--sp
+  border-bottom 2px solid $red
+  font-size 15px
+  font-weight bold
+  line-height 1.2
+  letter-spacing 0.02em
+  margin-bottom 6px
+  padding 5px 0 8px
+  width 100%
+
+.archive__cardItem__status
+  display flex
+  margin 2% 0
+  & > li
+    margin-right 8px
+  +sp()
+    border-top 2px dashed $blue01
+    padding-top 2px
+    display block
+    & > li
+      border-bottom 2px dashed $blue01
+      padding-bottom 2px
+      margin-bottom 5px
+
+.archive__cardItem__cost
+  +sp()
+    display none
+
+.archive__cardItem__thumb
+  width 20%
+  position absolute
+  left 1.5%
+  top -5%
+  & > img
+    width 100%
+  +sp()
+    align-items center
+    display flex
+    left 0
+    position relative
+    top 0
+    width 36%
+
+.archive__cardItem__id
+  bottom 1.5%
+  font-weight bold
+  right 1%
+  letter-spacing 0.08em
+  position absolute
+
+.archive__cardItem__tax
+  font-size 15px
+  font-weight bold
+  letter-spacing 0.02em
+  margin-top 34px
+  text-align right
+  & > div
+    margin-top 8px
+    &:nth-of-type(3)
+      font-size 14px
+    button
+      border-bottom 2px solid $red
+      padding-bottom 1px
+      transition color .2s
+      &:hover
+        color darken($red, 10)
+  +sp()
+    margin-top 0
+    & > div
+      &:nth-of-type(1)
+        margin-top 0
+        margin-bottom 15px
+
+/*
+  single
+*/
+.single__card
+  display flex
+  flex-wrap wrap
+
+.single__slide
+  box-sizing border-box
+  padding-right 10px
+  width 36%
+  +sp()
+    padding-right 0
+    position relative
+    text-align center
+    width 100%
+
+.single__slide__img
+  border 4px solid $red
+  box-sizing border-box
+  position relative
+  & > img
+    width 100%
+
+.single
+  .hooper
+    position relative
+    .single__slide__zoom
+      align-itesms centers
+      background-color rgba($white, .6)
+      bottom -101%
+      display flex
+      font-size 30px
+      justify-content center
+      padding 7px 0px 5px
+      position absolute
+      transition bottom 2s
+      right 0
+      z-index $indexLevel1
+      width 100%
+    &:hover
+      .single__slide__zoom
+        bottom 0
+        cursor pointer
+        transition bottom .3s
+    +sp()
+      margin 0 auto
+      max-width 280px
+
+.single__slide__dots
+  font-size 16px
+  margin-top 10px
+  & > div
+    border-left 5px solid $red
+    cursor pointer
+    padding 4px 16px 4px 12px
+    transition border-color 0.3s
+    & > i
+      color darken($red, 10)
+      margin-right 10px
+    &.action
+      cursor default
+    &.action,
+    &:hover
+      border-color darken($red, 10)
+      & > i
+        color darken($red, 15)
+
+.single__slide__btn
+  $btnSize = 60px
+  font-size 20px
+  & > li
+    @extends .m-btn
+    background-color $white
+    line-height $btnSize
+    margin -($btnSize/2 + 2)px auto 0
+    padding 0 10px
+    position absolute
+    top 50%
+    height $btnSize
+    &:nth-child(1)
+      left 0
+    &:nth-child(2)
+      right 0
+
+.single__slide__label
+  @extends .m-defaultFlex
+  font-weight bold
+  margin 10px auto
+  line-height 1
+  letter-spacing 0.04em
+  width 280px
+  & > div
+    padding 0 1%
+    width 48%
+    &:nth-of-type(2)
+      align-items center
+      box-sizing border-box
+      border 2px solid $red
+      border-radius 6px
+      display flex
+      justify-content center
+      padding 3px 0
+
+.single__status
+  width 64%
+  +sp()
+    display flex
+    flex-wrap wrap
+    width 100%
+
+.single__cardTtl
+  border-left 3px solid $blue02
+  font-size 16px
+  font-weight bold
+  line-height 1
+  letter-spacing 0.02em
+  margin-bottom 15px
+  padding 8px 0 8px 10px
+  +sp()
+    border-left none
+    border-bottom 1px dashed $blue02
+    text-align center
+    margin-bottom 10px
+
+.single__skill
+  background-color rgba($white, .6)
+  border-left 3px solid $blue02
+  font-size 14px
+  line-height 1
+  margin-bottom 15px
+  padding 5px 10px
+
+.single__skill__label
+  font-size 15px
+  margin-bottom 10px
+  font-weight normal
+  & > span
+    letter-spacing 0.03em
+
+.single__param
+  background-color rgba($white, .6)
+  border-right 2px dashed lighten($blue02, 5)
+  border-top 2px dashed lighten($blue02, 5)
+  box-sizing border-box
+  display flex
+  flex-wrap wrap
+  font-size 15px
+  margin-bottom 15px
+  & > li
+    box-sizing border-box
+    padding 10px
+    border-bottom 2px dashed lighten($blue02, 5)
+    border-left 2px dashed lighten($blue02, 5)
+    width 50%
+    & > span
+      margin-left 5px
+  +sp()
+    order 2
+    width 100%
+
+.single__serif
+  @extends .m-textBox
+  font-size 14px
+  +sp()
+    order 1
+    margin-bottom 15px
+    width 100%
+
+.single__relation
+  background-image linear-gradient(-45deg, lighten(rgba($blue01, .9), 12) 25%, lighten(rgba($blue01, .9), 15) 25%, lighten(rgba($blue01, .9), 15) 50%, lighten(rgba($blue01, .9), 12) 50%, lighten(rgba($blue01, .9), 12) 75%, lighten(rgba($blue01, .9), 15) 75%, lighten(rgba($blue01, .9), 15))
+  background-size 20px 20px
+  margin 20px 0 40px
+  padding 10px
+  +sp()
+    padding 0
+
+.single__relation__ttl
+  border-left 2px solid $blue02
+  font-size 14px
+  font-weight bold
+  line-height 1
+  margin-bottom 10px
+  padding 2px 0 0 5px
+
+.single__relation__data
+  background-color rgba($white, .5)
+  border-radius 2px
+  line-height 1.3
+  margin-bottom 15px
+  padding 8px
+  & > li
+    align-items center
+    border-bottom 1px dashed $blue01
+    display flex
+    margin-bottom 5px
+    padding-bottom 5px
+    &:before
+      @extends .m-icomoon
+      @extends .icon-double-right:before
+      background-color $white
+      border 2px solid $red
+      border-radius 50%
+      color $red
+      display block
+      font-size 16px
+      height 20px
+      line-height 20px
+      margin-right 5px
+      text-align center
+      width 24px
+    &.current
+      &:before
+        border 2px solid $blue02
+        color $blue02
+    &.single__relation__date
+      border-bottom none
+      justify-content flex-end
+      padding-top 3px
+      &:before
+        display none
+  button
+    +pc()
+      &:hover
+        color darken($red, 10)
+
+.single__content
+  @extends .m-textBox
+  font-size 15px
+  line-height 1.4
+  letter-spacing 0.02em
+  margin-bottom 15px
+  h1
+    border 2px solid $blue01
+    font-size 15px
+    font-weight bold
+    display inline-block
+    letter-spacing 0.02em
+    margin 10px 0 0
+    padding 5px
+    & + p
+      padding 0 5px
+
+.single__breadcrumb,
+.single__number
+  align-items center
+  background-color rgba($white, .7)
+  border-radius 20px
+  box-sizing border-box
+  display flex
+  max-width 360px
+  justify-content center
+  margin 10px auto
+  padding 10px
+
+.single__breadcrumb
+  & > li
+    margin-right 10px
+    &:nth-child(1)
+      & > button
+        &:hover
+          color darken($red, 10)
+    &:nth-child(1),
+    &:nth-child(2)
+      &:after
+        @extends .m-icomoon
+        @extends .icon-double-right:before
+        font-size 15px
+        margin-left 5px
+        position relative
+        top 1px
+  i
+    font-size 15px
+    margin-right 5px
+    position relative
+    top 1px
+
+.single__number
+  & > li
+    $btnSize = 40px
+    button
+      @extends .m-btn
+      background-color rgba($white, .6)
+      border-radius 50%
+      font-size 18px
+      height $btnSize
+      text-align center
+      width $btnSize
+      &:hover
+        background-color $red
+    &:nth-child(2)
+      font-size 14px
+      font-weight bold
+      letter-spacing 0.03em
+      margin 0 15px
+
+/*
+  taxonomy
+*/
+.taxonomy__status
+  font-size 15px
+  font-weight bold
+  line-height 1
+  text-align right
+  & > div
+    margin-bottom 8px
+  & button
+    border-bottom 2px solid $red
+    font-weight bold
+    padding-bottom 1px
+    &:hover
+      color darken($red, 10)
+  +sp()
+    text-align center
+    margin-bottom 15px
+
+.taxonomy__slide__thumb
+  display flex
+  flex-wrap wrap
+  margin 15px 0
+  width 100%
+  & > li
+    cursor pointer
+    position relative
+    width 20%
+    & > img
+      width 100%
+    &.action,
+    &:hover
+      &:before
+        box-sizing border-box
+        content ""
+        display block
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+        z-index $indexLevel1
+    &.action
+      &:before
+        background-color rgba($white, .2)
+        border 3px solid darken($red, 10)
+    &:hover
+      &:before
+        background-color rgba($white, .3)
+
+.taxonomy__slide__list
+  background-color rgba($white, .7)
+  margin-top 15px
+  +sp()
+    margin-top -10px
+
+.taxonomy__slide__item
+  display flex
+  flex-wrap wrap
+  border-bottom 1px solid $blue02
+  border-top 1px solid $blue02
+  justify-content space-between
+  padding 10px 0
+  +sp()
+    border none
+    padding-top 0
+    padding-bottom 15px
+
+.taxonomy__cardTtl
+  border-left 3px solid $blue02
+  font-size 16px
+  font-weight bold
+  line-height 1
+  letter-spacing 0.02em
+  margin-bottom 15px
+  padding 8px 0 8px 10px
+  +sp()
+    border-left none
+    border-bottom none
+    margin-bottom 0
+    padding 12px 0
+    text-align center
+    width 100%
+
+.taxonomy__img
+  border 4px solid $blue01
+  box-sizing border-box
+  position relative
+  width 36%
+  & > img
+    width 100%
+  +sp()
+    margin-bottom 15px
+    padding-right 0
+    position relative
+    text-align center
+    width 100%
+
+.taxonomy__card
+  box-sizing border-box
+  padding 10px
+  width 64%
+  +sp()
+    display flex
+    flex-wrap wrap
+    padding 0
+    width 100%
+
+.taxonomy__skill
+  border-left 3px solid $blue02
+  font-size 14px
+  font-weight bold
+  line-height 1
+  letter-spacing 0.02em
+  margin-bottom 15px
+  padding 8px 0 8px 10px
+  +sp()
+    border-left none
+    margin-bottom 10px
+    order 2
+    text-align center
+    width 100%
+
+.taxonomy__serif
+  @extends .m-textBox
+  font-size 14px
+  margin-bottom 15px
+  +sp()
+    order 1
+    width 100%
+
+.taxonomy__link
+  @extends .m-btn
+  border-radius 6px
+  padding 20px 0
+  text-align center
+  width 100%
+  +sp()
+    order 3
+
+.taxonomy__slide__btn
+  @extends .m-defaultFlex
+  font-size 20px
+  margin 10px 0
+  & > li
+    width 49%
+    & > button
+      @extends .m-btn
+      background-color rgba($white, .7)
+      text-align center
+      padding 18px 0
+      width 100%
+
+/*
+  notFound
+*/
+.notFound__content
+  display flex
+  flex-wrap wrap
+  +sp()
+    justify-content center
+
+.notFound__image
+  text-align center
+  margin-right 10px
+  +sp()
+    margin-right 0
+    margin-bottom 10px
+    width 100%
+
+.notFound__text
+  p
+    padding 0
+    margin 5px 0
+  strong
+    border-bottom 1px dashed $blue02
+    padding-bottom 1px
+
+/*
+  pagination
+*/
+.pagination
+  margin-bottom 18px
+  +sp()
+    margin-bottom 12px
+
+.pagination__btns
+  $btnSize = 64px
+  font-size 24px
+  display flex
+  > li
+    background-color $white
+    border 3px solid $red
+    box-sizing border-box
+    cursor pointer
+    height $btnSize
+    line-height $btnSize
+    text-align center
+    transition all 0.3s
+    width 25%
+    max-width $btnSize+30px
+    &:first-child
+      border-radius 20px 0 0 20px
+      border-right none
+    &:nth-child(2)
+      border-right none
+    &:last-child
+      border-left none
+      border-radius 0 20px 20px 0
+    &.disable
+      background-color $gray
+      cursor default
+    &:hover:not(.disable)
+      background-color $red
+    +sp()
+      &:first-child
+        border-radius 6px 0 0 6px
+      &:last-child
+        border-radius 0 6px 6px 0
+
+.pagination__select
+  margin-top 10px
+  & > select
+    font-size 20px
+    min-width 250px
+    width 50%
+
+/*
+  menu
+*/
+.menu
+  bottom 166px
+  font-size 22px
+  position absolute
+  right 10px
+  z-index $indexLevel2
+  li
+    background-color rgba($white, .9)
+    border-left 3px solid $red
+    cursor pointer
+    padding 4px 16px 4px 12px
+    transition border-color 0.3s
+    &:hover
+      border-color darken($red, 10)
+    & > i
+      color darken($red, 10)
+      margin-right 10px
+
+.subMenu
+  background-color $white
+  bottom 0
+  font-size 14px
+  font-weight bold
+  left 0
+  line-height 1
+  padding 1em
+  position relative
+  width 200px
+  z-index $indexLevel2
+  & > a
+    @extends .m-btn
+    background-color $white
+    border-radius 6px
+    color $black
+    display block
+    letter-spacing 0.06em
+    margin-bottom 1em
+    padding 1em 10px
+    & > i
+      font-size 14px
+      margin-right 6px
+      position relative
+      top 1px
+
+/*
+  searchForm
+*/
+.searchForm
+  @extends .m-layer
+  padding 2% 1% 84px
+
+.searchForm__ttl
+  border-bottom 1px dashed $white
+  font-size 16px
+  line-height 1
+  margin-bottom 10px
+  padding-bottom 10px
+  &:before
+    @extends .m-icomoon
+    @extends .icon-radio-checked:before
+    font-size 17px
+    margin-right 5px
+    position relative
+    top 1px
+
+.serachForm__keyword
+  & > input
+    box-sizing border-box
+    margin-bottom 20px
+    width 100%
+
+.serchForm__settings
+  @extends .m-defaultFlex
+  & > div
+    width 49%
+    margin-bottom 20px
+    & > select
+      width 100%
+
+.serachForm__idols__tabs
+  display flex
+  font-size 13px
+  flex-wrap wrap
+  line-height 1
+  & > li
+    @extends .m-btn
+    background-color rgba($white, .6)
+    border-radius 4px
+    font-size 14px
+    margin 0 8px 5px 0
+    padding 12px 24px
+    text-align center
+    &.active
+      background-color $red
+
+.searchForm__idols__btns
+  display flex
+  flex-wrap wrap
+  & > li
+    cursor pointer
+    margin 0 1% 1% 0
+    width 18%
+    transition all .3s
+    & > img
+      width 100%
+    &:hover
+      & > img
+        opacity 0.8
+
+.serachForm__idols__panel
+  border-bottom 1px dashed $blue01
+  display flex
+  margin 10px 0
+  padding-bottom 10px
+
+.serachForm__idols__selected
+  font-weight bold
+  font-size 15px
+  margin-right 20px
+
+.serachForm__idols__reset
+  @extends .m-btn
+  background-color rgba($white, .6)
+  border-radius 6px
+  display inline-block
+  margin-top 10px
+  padding 8px 12px
+  & > i
+    margin-right 5px
+    position relative
+    top 1px
+
+.serachForm__idols__panel__img
+  width 120px
+  & > img
+    width 100%
+
+.searchForm__footer
+  @extends .m-defaultFlex
+  background-color rgba($white, .8)
+  border-top 2px solid $blue01
+  box-sizing border-box
+  font-size 24px
+  padding 5px
+  & > button
+    @extends .m-btn
+    align-items center
+    background-color $white
+    border-radius 6px
+    box-sizing border-box
+    display flex
+    height 64px
+    line-height 1
+    padding 10px
+    transition background-color 0.3s
+  & > button:nth-of-type(1)
+    letter-spacing 0.15em
+    width 68%
+    & > i
+      margin-right 10px
+  & > button:nth-of-type(2)
+    justify-content center
+    width 30%
+
+/*
+  lightBox
+*/
+.lightBox
+  @extends .m-layer
+  padding 1% 1% 120px
+
+.lightBox__img
+  max-width 600px
+  margin 0 auto
+  img
+    width 100%
+
+.lightBox__control
+  @extends .m-defaultFlex
+  box-sizing border-box
+  margin 1% 0
+
+.lightBox__close
+  @extends .m-btn
+  background-color $white
+  border-radius 6px
+  font-size 26px
+  height 40px
+  line-height 40px
+  text-align center
+  width 65%
+
+.lightBox__Label
+  background-color rgba($white, .7)
+  border 2px solid $blue01
+  border-radius 6px
+  font-size 16px
+  font-weight bold
+  height 40px
+  line-height 40px
+  text-align center
+  width 30%
+
+/*
+  footer
+*/
+.footerBtn__bg
+  width 120px
+  height 120px
+  background repeating-linear-gradient(60deg, $red, $red 15px, rgba($red, .6) 15px, rgba($red, .6) 30px)
+  bottom 11px
+  right 11px
+  position absolute
+  border-radius 50%
+  z-index -1
+
+[class^="footerBtn--"]
+  @extends .m-btn
+  align-items center
+  background-color lighten($red, 5)
+  border-radius 50%
+  font-size 20px
+  display flex
+  justify-content center
+  position absolute
+  z-index $indexLevel2
+  +pc()
+    &:hover
+      border-color $white
+
+.footerBtn--up
+  bottom 12px
+  height 48px
+  right 12px
+  width 48px
+
+.footerBtn--menu
+  bottom 72px
+  right 12px
+  width 60px
+  height 60px
+
+.footerBtn--search
+  bottom 12px
+  right 72px
+  width 72px
+  height 72px

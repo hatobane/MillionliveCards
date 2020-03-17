@@ -10,7 +10,9 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-router": "^3.1.5"
+    "vue-analytics": "^5.22.1",
+    "vue-router": "^3.1.5",
+    "vue-script2": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
@@ -20,8 +22,19 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "firebase": "^7.11.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-stylus": "^2.7.0",
+    "gulp-yaml": "^2.0.4",
+    "hooper": "^0.3.4",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
+    "vue-head": "^2.2.0",
+    "vue-smoothscroll": "^0.2.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

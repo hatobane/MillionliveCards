@@ -1,19 +1,57 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+
+    <the-header/>
+
+    <div class="content" :class="{fix: fix}">
+
+      <transition name="fadeIn">
+        <router-view/>
+      </transition>
+
     </div>
-    <router-view/>
+
+    <the-footer/>
+
   </div>
 </template>
 
-<style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
-</style>
+<script>
+import {EventBus} from '@/components/libs/EventBus.js'
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+
+export default {
+  name: 'App',
+  components: {
+    TheHeader,
+    TheFooter
+  },
+  data() {
+    return {
+      fix: false,
+      notFound: {
+        show: false,
+        text: ''
+      }
+    }
+  },
+  watch: {
+    '$route': function(to, from) {
+      if (to.path !== from.path) {
+        this.$SmoothScroll(document.body, 800)
+      }
+    }
+  },
+  mounted() {
+    EventBus.$on('fixBackground', ($event)=> {
+      this.fixBackground($event)
+    })
+  },
+  methods: {
+    fixBackground(boolean) {
+      this.fix = boolean
+    }
+  }
+}
+</script>

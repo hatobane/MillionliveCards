@@ -1,0 +1,139 @@
+/*
+  media-query display
+*/
+.m-pc
+  +sp()
+    display none !important
+
+.m-sp
+  +pc()
+    display none !important
+
+/*
+  icomoon
+*/
+.m-icomoon
+  font-family 'icomoon' !important
+  font-style normal
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  font-variant normal
+  font-weight normal
+  line-height 1
+  text-transform none
+  speak none
+
+/*
+  box
+*/
+.m-textBox
+  background-color rgba($white, .6)
+  border 2px dashed lighten($blue02, 5)
+  padding 5px
+
+.m-defaultFlex
+  align-items center
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+
+/*
+  title
+*/
+.m-contentTtl
+  background repeating-linear-gradient(
+    -45deg,
+    lighten($blue01, 8) 0,
+    lighten($blue01, 6) 5px,
+    lighten($blue01, 3) 5px,
+    lighten($blue01, 3) 10px
+  )
+  border-radius 6px
+  font-size 16px
+  font-weight bold
+  letter-spacing 0.02em
+  padding 5px 10px
+  margin-bottom 10px
+
+/*
+  button
+*/
+.m-btn
+  appearance none
+  border 2px solid $red
+  cursor pointer
+  font-weight bold
+  outline none
+  transition all .3s
+  +pc()
+    &:hover
+      background-color $red
+
+.m-homeBtn
+  margin-top 40px
+  > button
+    @extends .m-btn
+    background-color $white
+    border-radius 6px
+    color $black
+    display block
+    letter-spacing 0.06em
+    margin 0 auto
+    max-width 260px
+    padding 1em 10px
+    width 50%
+    &:before
+      @extends .m-icomoon
+      @extends .icon-home:before
+      font-size 18px
+      margin-right 1px
+      position relative
+      top 2px
+
+/*
+  layer
+*/
+.m-layer
+  background-image radial-gradient($blue01 15%, lighten($blue02, 5) 20%)
+  background-size 30px 30px
+  bottom 0
+  box-sizing border-box
+  left 0
+  margin auto
+  max-width 640px
+  min-height 100%
+  position fixed
+  right 0
+  top 0
+  overflow-y auto
+  width 100%
+  z-index $indexLevel3
+
+/*
+  form
+*/
+select,
+input
+  border 2px solid $red
+  border-width 2px
+  padding 5px
+
+select
+  cursor pointer
+
+/*
+  title
+*/
+.m-ttl
+  background-color rgba($blue01, 0.8)
+  border-radius 4px
+  font-size 20px
+  display inline-block
+  padding 2px 6px
+  letter-spacing 0.02em
+
+/*
+  kokoku
+*/
+.d-kokoku
+  background-color lighten($black, 15)
