@@ -16,7 +16,7 @@ import './assets/css/transition.css'
 import 'hooper/dist/hooper.css'
 
 Vue.config.productionTip = false
-Vue.use(VueAnalytics, {id:'UA-64301469-2'})
+Vue.use(VueAnalytics, {id:'UA-64301469-2', router})
 Vue.use(VueHead, {separator:'|'})
 Vue.use(smoothScroll)
 
