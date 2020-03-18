@@ -26,16 +26,6 @@ ul, ol, li
   margin 0
   padding 0
 
-button
-  appearance none
-  background-color transparent
-  border none
-  color $black
-  cursor pointer
-  outline none
-  transition all .2s
-  padding 0
-
 a
   border-bottom 1px solid $red
   color darken($red, 10)
@@ -110,6 +100,8 @@ img
 */
 .archive
   margin 10px 0 50px
+  +sp()
+    margin-bottom 30px
 
 .archive__label
   border-bottom 1px dashed darken($blue01, 10)
@@ -259,6 +251,10 @@ img
         margin-top 0
         margin-bottom 15px
 
+.archive__ad--pc
+  @extends .m-kokoku--pc
+  margin-bottom 10px
+
 /*
   single
 */
@@ -391,6 +387,8 @@ img
   line-height 1
   margin-bottom 15px
   padding 5px 10px
+  +sp()
+    order 2
 
 .single__skill__label
   font-size 15px
@@ -417,7 +415,7 @@ img
     & > span
       margin-left 5px
   +sp()
-    order 2
+    order 3
     width 100%
 
 .single__serif

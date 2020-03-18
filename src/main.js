@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VS2 from 'vue-script2'
 import App from './App.vue'
 import router from './router'
 
@@ -17,7 +16,6 @@ import './assets/css/transition.css'
 import 'hooper/dist/hooper.css'
 
 Vue.config.productionTip = false
-Vue.use(VS2)
 Vue.use(VueAnalytics, {id:'UA-64301469-2'})
 Vue.use(VueHead, {separator:'|'})
 Vue.use(smoothScroll)

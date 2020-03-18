@@ -21,6 +21,7 @@
           <li>MaxDp:<span>{{card.dp}}</span></li>
         </ul>
         <div class="single__serif" v-html="card.serif"></div>
+
       </div>
 
     </div>
@@ -64,6 +65,32 @@
         <li>No.{{card.id}}</li>
         <li v-if="nextCard"><button type="button" @click="jumpSinglePage(nextCard)"><i class="icon-right"></i></button></li>
       </ul>
+    </div>
+
+    <div class="m-kokoku--pc m-pc">
+      <iframe
+        src="/iframe/AdmaxPc01.html"
+        border="0"
+        marginwidth="0"
+        marginheight="0"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        height="60px"
+      ></iframe>
+    </div>
+
+    <div class="m-kokoku--sp m-sp">
+      <iframe
+        src="/iframe/AdmaxSp02.html"
+        border="0"
+        marginwidth="0"
+        marginheight="0"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        height="100px"
+      ></iframe>
     </div>
 
   </div>
